@@ -1,0 +1,6 @@
+# Con DOMAIN=panel.tudominio.com Caddy obtiene y renueva el certificado HTTPS solo.
+# Con DOMAIN=:80 sirve por HTTP en la IP (solo para pruebas).
+{$DOMAIN} {
+	encode gzip
+	reverse_proxy app:3000
+}
